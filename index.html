@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>Allan Emmert -- Sep 25 1928 - Aug 26 2016</title>
     <style>
-        .step { opacity: 0.5; transition: opacity 0.5s ease-in; }
-        .step.active { opacity: 1.0; }
+        html, body { margin: 0; padding: 0; }
+        img { max-height: 100vh; max-width: 100vw; }
+        .step { opacity: 0.5; transition: opacity 0.5s ease-in, z-index 0.5s ease-in; }
+        .step.active { opacity: 1.0; z-index: 9999999; transition: none; }
     </style>
 </head>
 <body>
@@ -25,13 +27,13 @@
         <div class="step" data-x="-3400" data-y="1980">
             <img src="images/4.png">
         </div>
-        <div class="step" data-x="-2500" data-y="-1395">
+        <div class="step" data-x="-2500" data-y="1395">
             <img src="images/5.png">
         </div>
-        <div class="step" data-x="-4270" data-y="430">
+        <div class="step" data-x="-4270" data-y="430" data-scale="4">
             <img src="images/6.png">
         </div>
-        <div class="step" data-x="-2900" data-y="1320">
+        <div class="step" data-x="-2900" data-y="2320" data-scale="2">
             <img src="images/7.png">
         </div>
         <div class="step" data-x="-3100" data-y="-100">
@@ -43,7 +45,7 @@
         <div class="step" data-x="-3600" data-y="1450">
             <img src="images/10.png">
         </div>
-        <div class="step" data-x="-2500" data-y="-1000">
+        <div class="step" data-x="-2500" data-y="-1000" data-scale="2">
             <img src="images/11.png">
         </div>
         <div class="step" data-x="-2500" data-y="1000">
@@ -70,46 +72,46 @@
         <div class="step" data-x="-2910" data-y="2050">
             <img src="images/19.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="-3000" data-y="1000">
             <img src="images/20.png">
         </div>
         <div class="step" data-x="-1000" data-y="-1500">
             <img src="images/21.png">
         </div>
-        <div class="step" data-x="200" data-y="300">
+        <div class="step" data-x="3000" data-y="300">
             <img src="images/22.png">
         </div>
-        <div class="step" data-x="1000" data-y="1500">
+        <div class="step" data-x="4000" data-y="1500">
             <img src="images/23.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="-3385" data-y="1000">
             <img src="images/24.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="3198" data-y="2000">
             <img src="images/25.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="4687" data-y="-2872">
             <img src="images/26.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="5000" data-y="-1248">
             <img src="images/27.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="-5000" data-y="-3320">
             <img src="images/28.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="4103" data-y="-2150">
             <img src="images/29.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="-3872" data-y="0">
             <img src="images/30.png">
         </div>
-        <div class="step" data-x="-1000" data-y="-1500">
+        <div class="step" data-x="2689" data-y="-3000">
             <img src="images/31.png">
         </div>
-        <div class="step" data-x="200" data-y="300">
+        <div class="step" data-x="3200" data-y="300">
             <img src="images/32.png">
         </div>
-        <div class="step" data-x="1000" data-y="1500">
+        <div class="step" data-x="2893" data-y="-1250">
             <img src="images/33.png">
         </div>
         <div class="step" data-x="-500" data-y="1000">
@@ -142,16 +144,16 @@
         <div class="step" data-x="1000" data-y="1500">
             <img src="images/43.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="4500" data-y="2000" data-scale="2">
             <img src="images/44.png">
         </div>
         <div class="step" data-x="-500" data-y="1000">
             <img src="images/45.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="-2500" data-y="-3500">
             <img src="images/46.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="2900" data-y="2800" data-scale="2">
             <img src="images/47.png">
         </div>
         <div class="step" data-x="-500" data-y="1000">
@@ -160,16 +162,16 @@
         <div class="step" data-x="-500" data-y="1000">
             <img src="images/49.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="-2500" data-y="-100">
             <img src="images/50.png">
         </div>
-        <div class="step" data-x="-1000" data-y="-1500">
+        <div class="step" data-x="-2500" data-y="500">
             <img src="images/51.png">
         </div>
-        <div class="step" data-x="200" data-y="300">
+        <div class="step" data-x="4000" data-y="800">
             <img src="images/52.png">
         </div>
-        <div class="step" data-x="1000" data-y="1500">
+        <div class="step" data-x="2500" data-y="-1500">
             <img src="images/53.png">
         </div>
         <div class="step" data-x="-500" data-y="1000">
@@ -184,7 +186,7 @@
         <div class="step" data-x="-500" data-y="1000">
             <img src="images/57.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="-4000" data-y="-2000" data-scale="3">
             <img src="images/58.png">
         </div>
         <div class="step" data-x="-500" data-y="1000">
@@ -214,7 +216,7 @@
         <div class="step" data-x="-500" data-y="1000">
             <img src="images/67.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="3500" data-y="-1000" data-scale="3">
             <img src="images/68.png">
         </div>
         <div class="step" data-x="-500" data-y="1000">
@@ -226,10 +228,10 @@
         <div class="step" data-x="-1000" data-y="-1500">
             <img src="images/71.png">
         </div>
-        <div class="step" data-x="200" data-y="300">
+        <div class="step" data-x="5000" data-y="0" data-scale="2">
             <img src="images/72.png">
         </div>
-        <div class="step" data-x="1000" data-y="1500">
+        <div class="step" data-x="-2500" data-y="-2500" data-scale="2">
             <img src="images/73.png">
         </div>
         <div class="step" data-x="-500" data-y="1000">
@@ -247,7 +249,7 @@
         <div class="step" data-x="-500" data-y="1000">
             <img src="images/79.png">
         </div>
-        <div class="step" data-x="-500" data-y="1000">
+        <div class="step" data-x="-4500" data-y="2500" data-scale="3">
             <img src="images/80.png">
         </div>
         <div class="step" data-x="-1000" data-y="-1500">
