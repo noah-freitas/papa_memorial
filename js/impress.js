@@ -176,12 +176,7 @@
 
                           // Browser should support `classList` and `dataset` APIs
                            ( body.classList ) &&
-                           ( body.dataset ) &&
-
-                          // But some mobile devices need to be blacklisted,
-                          // because their CSS 3D support or hardware is not
-                          // good enough to run impress.js properly, sorry...
-                           ( ua.search( /(iphone)|(ipod)|(android)/ ) === -1 );
+                           ( body.dataset );
 
     if ( !impressSupported ) {
 
