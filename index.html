@@ -19,12 +19,24 @@
             position: fixed;
             top: calc(50vh - 400px);
         }
+        body.paused:not(.loading) .step:first-of-type {
+            opacity: 0.8;
+        }
+        body.loading #play { display: none; }
+        #play {
+            display: block;
+            font-size: 1.5em;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+        }
     </style>
 </head>
-<body class="loading">
+<body class="loading paused">
     <div id="impress">
         <div class="step" data-x="0" data-y="0" data-scale="10">
             <img src="images/76.png" height="800" width="400">
+            <button id="play">Play</button>
         </div>
         <div class="step" data-x="-5000" data-y="-3000">
             <img src="images/1.png">
@@ -316,9 +328,14 @@
             var slideShow = impress();
             slideShow.init();
             setTimeout(function () {
-                setInterval(function () {
+                document.querySelector('#play').addEventListener('click', function (e) {
+                    e.target.style.display = 'none';
+                    document.body.classList.remove('paused');
                     slideShow.next();
-                }, 5000);
+                    setInterval(function () {
+                        slideShow.next();
+                    }, 5000);
+                });
             }, 5000);
         });
     </script>
