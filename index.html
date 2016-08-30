@@ -364,9 +364,10 @@
             var lastStep = document.querySelector('.step:last-of-type');
 
             window.addEventListener('load', function (e) {
-                document.body.classList.remove('loading');
                 slideShow = impress();
                 slideShow.init();
+
+                document.body.classList.remove('loading');
                 document.querySelector('#play').addEventListener('click', play);
                 document.querySelector('#fullscreen').addEventListener('click', function (e) {
                     e.target.style.display = 'none';
@@ -376,8 +377,11 @@
 
             function play(e) {
                 e.target.style.display = 'none';
+                var soundTrack         = document.querySelector('#soundtrack');
+                soundTrack.volume      = 1;
+                soundTrack.currentTime = 0;
+                soundTrack.play();
                 document.body.classList.remove('paused');
-                document.querySelector('#soundtrack').play();
                 setTimeout(nextSlide, 5000);
             }
 
@@ -394,11 +398,32 @@
             }
 
             function stop() {
-                document.body.classList.add('paused');
-                document.querySelector('#play').style.display = 'block';
-                var audio = document.querySelector('#soundtrack');
-                audio.pause();
-                audio.currentTime = 0;
+                fadeVolume(document.querySelector('#soundtrack'), 5).then(function () {
+                    document.body.classList.add('paused');
+                    document.querySelector('#play').style.display = 'block';
+                });
+            }
+
+            function fadeVolume(mediaEl, fadeDuration) {
+                return new Promise(function (res) {
+                    var steps        = 20,
+                        stepVolume   = 1 / steps,
+                        stepInterval = fadeDuration / steps * 1000;
+
+                    fade();
+
+                    function fade() {
+                        setTimeout(function () {
+                            mediaEl.volume -= stepVolume;
+                            if (mediaEl.volume >= stepVolume) {
+                                fade();
+                            } else {
+                                mediaEl.pause();
+                                res();
+                            }
+                        }, stepInterval);
+                    }
+                });
             }
         }());
     </script>
