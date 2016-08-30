@@ -356,7 +356,6 @@
             <img src="images/80.png">
         </div>
     </div>
-    <video src="video/small.mp4" loop id="screen-lock"></video>
     <audio src="audio/out-of-africa-main-title.mp3" id="soundtrack" loop></audio>
     <script src="js/impress.js"></script>
     <script>
@@ -378,9 +377,6 @@
             function play(e) {
                 e.target.style.display = 'none';
                 document.body.classList.remove('paused');
-                var lock = document.querySelector('#screen-lock');
-                lock.volume = 0;
-                lock.play();
                 document.querySelector('#soundtrack').play();
                 setTimeout(nextSlide, 5000);
             }
@@ -400,7 +396,6 @@
             function stop() {
                 document.body.classList.add('paused');
                 document.querySelector('#play').style.display = 'block';
-                document.querySelector('#screen-lock').pause();
                 var audio = document.querySelector('#soundtrack');
                 audio.pause();
                 audio.currentTime = 0;
