@@ -368,12 +368,15 @@
             <img src="images/80.png">
         </div>
     </div>
+    <video src="video/small.mp4" loop id="screen-lock"></video>
     <audio src="audio/out-of-africa-main-title.mp3" id="soundtrack" loop></audio>
     <script src="js/impress.js"></script>
     <script>
         (function () {
             var slideShow;
             var lastStep = document.querySelector('.step:last-of-type');
+
+            document.querySelector('#screen-lock').volume = 0;
 
             window.addEventListener('load', function (e) {
                 slideShow = impress();
@@ -394,6 +397,8 @@
                 soundTrack.currentTime = 0;
                 soundTrack.play();
                 document.body.classList.remove('paused');
+                document.querySelector('#screen-lock').play();
+                document.querySelector('#soundtrack').play();
                 setTimeout(nextSlide, 5000);
             }
 
@@ -413,6 +418,7 @@
                 fadeVolume(document.querySelector('#soundtrack'), 5).then(function () {
                     document.body.classList.add('paused');
                     document.querySelector('#play').style.display = 'block';
+                    document.querySelector('#screen-lock').pause();
                 });
             }
 
